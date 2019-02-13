@@ -22,6 +22,19 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
   end
 
+  def update
+    @restaurant = Restaurant.find(params[:id])
+    @restaurant.update(restaurant_params)
+    redirect_to admin_restaurants_path
+  end
+
+  def destroy
+    @restaurant = Restaurant.find(params[:id])
+    @restaurant.destroy
+    # no need for app/views/restaurants/destroy.html.erb
+    redirect_to admin_restaurants_path
+  end
+
   private
 
   def restaurant_params
