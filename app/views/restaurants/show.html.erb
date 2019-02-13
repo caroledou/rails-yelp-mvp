@@ -6,5 +6,5 @@
 <%= review.restaurant_id %>
 <% end %>
 
-<%= link_to "Add a review", review_new_path(@restaurant.id) %>
+<%= link_to "Add a review", reviews_path(@restaurant.id) %>
 <%= link_to "Back", restaurants_path  %>
